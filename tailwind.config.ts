@@ -11,8 +11,10 @@ const config: Config = {
       'brand': '#FC4308',
       'white': '#FFF',
       'black': '#3E3232',
-      'black-75': '#3E3232',
-      'gray':'#F5F5F5',
+      'black-75': 'rgba(0, 0, 0, 0.75)',
+      'black-50':'rgba(62, 50, 50, 0.5)',
+      'gray': '#F5F5F5',
+
     }
   },
   plugins: [],

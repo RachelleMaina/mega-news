@@ -1,17 +1,17 @@
+import { Post } from "@/types";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
-interface Props {
-  title: string;
-  description: string;
-  profileImg: string;
-  author: string;
-  date: string;
-}
-
-const CardOne = ({ title, description, profileImg, author, date }: Props) => {
+const CardOne = ({
+  title,
+  description,
+  profileImg,
+  bannerImg,
+  author,
+  date,
+}: Post) => {
   return (
-    <div className="bg-white p-2 rounded-2xl flex flex-col gap-2 shadow-md">
+    <div className="bg-white p-2 rounded-2xl flex flex-col gap-2 lg:drop-shadow-md md:drop-shadow-md drop-shadow">
       <div
         style={{
           position: "relative",
@@ -19,10 +19,10 @@ const CardOne = ({ title, description, profileImg, author, date }: Props) => {
         }}
       >
         <Image
-          src="/images/image1.jpg"
+          src={bannerImg}
           alt="banner"
           fill
-          style={{ borderRadius: "12px" }}
+          style={{ borderRadius: "12px", objectFit: "cover" }}
         />
       </div>
       <div>
@@ -37,18 +37,17 @@ const CardOne = ({ title, description, profileImg, author, date }: Props) => {
         <div className="flex flex-row gap-3">
           <div
             style={{
-             position:"relative",
+              position: "relative",
               width: "44px",
               height: "44px",
-         
             }}
           >
-               <Image
-          src="/images/james.jpg"
-          alt="author"
-          fill
-          style={{ borderRadius: "12px" }}
-        />
+            <Image
+              src={profileImg}
+              alt="author"
+              fill
+              style={{ borderRadius: "12px" }}
+            />
           </div>
           <div className="flex flex-col gap-1">
             <span className="text-black font-medium text-sm">{author}</span>
